@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DashBoard</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{url_for('static', filename='homedemostatic.css')}}" >
+  
+  <style>
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .nav-link {
+      cursor: pointer;
+      font-size: 24px;
+    }
+
+    img {
+      width: 100px; /* Adjust as needed */
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .col-md-4 {
+      flex: 0 0 auto;
+    }
+    input[type="submit"] {
+            align-self: center;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+  </style>
+</head>
+<body>
+  <main role="main">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="nav-item">
+            <input type="radio" class="nav-link" name="tabs" id="actionTab">
+            <label class="nav-link" for="actionTab">Action</label>
+            <img width="48" height="48" src="https://img.icons8.com/color/48/start.png" alt="Action"/>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="nav-item">
+            <input type="radio" class="nav-link" name="tabs" id="studentsTab">
+            <label class="nav-link" for="studentsTab">Students</label>
+            <img width="50" height="50" src="https://img.icons8.com/ios/50/students.png" alt="students"/>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="nav-item">
+            <input type="radio" class="nav-link" name="tabs" id="transactionTab">
+            <label class="nav-link" for="transactionTab">Transaction</label>
+            <img width="48" height="48" src="https://img.icons8.com/color/48/transaction.png" alt="transaction"/>
+          </div>
+        </div>
+        <label>
+          <input type="checkbox" id="authorization" name="authorization" required>
+          Save my selection
+       </label><br>
+        <form id="submitform">
+        <input type="submit" class="bttn" value="Submit">
+        </form>
+      </div>
+    </div>
+  </main>
+  <script>
+    // Add event listener for form submission
+    document.getElementById("submitform").addEventListener("submit", function(event) {
+        // Prevent default form submission behavior
+        event.preventDefault();
+        window.location.href = "infoform.html";
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

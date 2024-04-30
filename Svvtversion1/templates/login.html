@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='loginstatic.css')}}" type="text/css">
+    <style>
+        img {
+            float: left;
+            margin-right: 20px; /* Optional: Add some spacing between the image and other content */
+            height: 50vh;
+            width: 50vh;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('/static/librarybackgrond.jpg'); /* Replace 'your-background-image.jpg' with your image file path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .myform {
+            text-align: center;
+            border: 2px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-container {
+            margin-bottom: 10px;
+        }
+
+        .input-field {
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .bttn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .bttn:hover {
+            background-color: #0056b3;
+        }
+
+        a:link {
+            color: rgb(9, 12, 9);
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="myform">
+        <form id="loginForm">
+            <img src="https://img.icons8.com/cute-clipart/344/login-rounded-right.png" alt="Login Logo" style="width:100px; height:100px;">
+            <div class="input-container">
+                <!-- <i class="fa fa-envelope icon"></i> -->
+                <input type="email" placeholder="Email" name="email" id="emailid" class="input-field">
+            </div>
+            <div class="input-container">
+                <!-- <i class="fa fa-key icon"></i> -->
+                <input type="password" placeholder="Password" name="password" class="input-field">
+            </div>
+            <a href="/forgotpassword">Forgot Password</a>
+            <input type="submit" class="bttn" value="Submit">
+        </form>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function() {
+            event.preventDefault();
+            window.location.href = "base.html";
+        });
+    </script>
+</body>
+
+</html>
